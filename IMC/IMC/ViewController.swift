@@ -11,17 +11,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    @IBOutlet weak var txtPeso: UITextField!
+    @IBOutlet weak var btnCalcular: UIButton!
+    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var txtAltura: UITextField!
+    
+    @IBAction func calcular(){
+        let peso:Double = Double(txtPeso.text!)!
+        let altura:Double = Double(txtAltura.text!)!
+        resultLabel.text = String(peso/(pow(altura, 2.0)))
     }
-
-
-    override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-    }
-
-
-
+    
 }
